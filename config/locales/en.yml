@@ -29,6 +29,8 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 en:
+  user_not_found: "User not found"
+  invalid : "Invalid email/password combination"
   welcom : "Welcome to the Sample App!"
   base_title : "Ruby on Rails Tutorials Sample App"
   layout:
@@ -38,9 +40,15 @@ en:
       about : "About"
       contact : "Contact"
     _header :
+      sampleapp : "sample app"
       home : "Home"
       help : "Help"
       login : "Log in"
+      users : "Users"
+      account : "Account"
+      profile : "Profile"
+      settings : "Settings"
+      logout : "Log out"
     application:
   shared :
     _error_messages :
@@ -66,6 +74,10 @@ en:
     new:
       h1tag : "Sign up"
       content : "This will be a signup page for new users."
-
       create : "Create my account"
     show:
+  sessions:
+    new:
+      login : "Log in"
+      sign_up_now: "Sign up now!"
+      new : "New user ?"
