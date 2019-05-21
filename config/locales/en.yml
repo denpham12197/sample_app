@@ -30,4 +30,20 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+
+  base_title : "Ruby on Rails Tutorials Sample App"
+  layout:
+    application:
+
+  static_pages:
+    about:
+      h1tag : "About Page"
+    help:
+      h1tag : "Help Page"
+    home:
+      h1tag : "Home Page"
+    contact:
+      h1tag : "Contact Page"
+      content : "Contact the Ruby on Rails Tutorial about the sample app at the"
+
+
