@@ -22,5 +22,7 @@ class SessionsController < ApplicationController
 
   def remember_check checked, user
     checked == "1" ? remember(user) : forget(user)
+    log_out
+    redirect_to root_url
   end
 end
