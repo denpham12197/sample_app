@@ -29,8 +29,7 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 en:
-  base_title : "Ruby on Rails Tutorials Sample App"
-  layout:
+  welcom : "Welcome to the Sample App!"
   base_title : "Ruby on Rails Tutorials Sample App"
   layout:
     _footer:
@@ -43,6 +42,9 @@ en:
       help : "Help"
       login : "Log in"
     application:
+  shared :
+    _error_messages :
+      message : "The form contains"
   static_pages:
     about:
       h1tag : "About Page"
@@ -64,3 +66,6 @@ en:
     new:
       h1tag : "Sign up"
       content : "This will be a signup page for new users."
+
+      create : "Create my account"
+    show:
