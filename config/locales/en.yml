@@ -30,6 +30,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  base_title : "Ruby on Rails Tutorials Sample App"
   layout:
     application:
 
