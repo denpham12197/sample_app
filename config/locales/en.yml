@@ -28,12 +28,21 @@
 #
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
-
 en:
   base_title : "Ruby on Rails Tutorials Sample App"
   layout:
+  base_title : "Ruby on Rails Tutorials Sample App"
+  layout:
+    _footer:
+      content : "Ruby on Rails Tutorial"
+      name : "Michael Hartl"
+      about : "About"
+      contact : "Contact"
+    _header :
+      home : "Home"
+      help : "Help"
+      login : "Log in"
     application:
-
   static_pages:
     about:
       h1tag : "About Page"
@@ -41,6 +50,17 @@ en:
       h1tag : "Help Page"
     home:
       h1tag : "Home Page"
+      signupnow: Sign up now!"
     contact:
       h1tag : "Contact Page"
       content : "Contact the Ruby on Rails Tutorial about the sample app at the"
+      welcome : "Welcome to the Sample App"
+      h2tag : "This is the home page for the"
+      h2-content : "Ruby on Rails Tutorial"
+    contact:
+      h1tag : "Contact Page"
+      content : "Contact the Ruby on Rails Tutorial about the sample app at the"
+  users:
+    new:
+      h1tag : "Sign up"
+      content : "This will be a signup page for new users."
