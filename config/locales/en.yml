@@ -31,6 +31,8 @@
 en:
   welcom : "Welcome to the Sample App!"
   base_title : "Ruby on Rails Tutorials Sample App"
+  micropost:
+    nil: "Micropost nil"
   form:
     post: "Post"
     sure: "You sure?"
@@ -53,6 +55,11 @@ en:
     msg9: "Micropost created!"
     msg10: "Micropost deleted"
     msg11: "Compose new micropost..."
+    msg12: "Following"
+    msg13: "Followers"
+    mic : "micropost"
+    follow: "Follow"
+    unfollow: "Unfollow"
   errors:
     user_deleted: "User deleted"
     pls_login: "Please log in."
@@ -94,7 +101,6 @@ en:
       message : "The form contains"
     _user_info:
       view_profile: "view my profile"
-      mic : "micropost"
     _micropost_form:
       msg1: "Maximum file size is 5MB. Please choose a smaller file."
   static_pages:
@@ -131,6 +137,7 @@ en:
       delete: "delete"
     _form:
       comfirm: "Confirmation"
+
   sessions:
     new:
       forgot_password: "(forgot password)"
@@ -154,4 +161,5 @@ your password will stay as it is."
   microposts:
     _micropost:
       delete: "delete"
-      post: "Posted"
+      post: "Posted "
+      ago: "ago."
