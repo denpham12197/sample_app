@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
+  before_action :logged_in_user, except: [:new, :show, :create]
   before_action :load_user, except: [:new, :index, :create]
   before_action :correct_user, only: [:edit, :update]
   before_action :admin_user, only: :destroy
@@ -13,11 +13,13 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  def edit; end
-
   def show
     redirect_to root_url && return unless @user.activated
+    @microposts = @user.microposts.paginate page: params[:page],
+      per_page: Settings.per_page
   end
+
+  def edit; end
 
   def create
     @user = User.new(user_params)
@@ -49,6 +51,18 @@ class UsersController < ApplicationController
     end
   end
 
+  def following
+    @title = t "message.msg12"
+    @users = @user.following.paginate(page: params[:page])
+    render "show_follow"
+  end
+
+  def followers
+    @title = t "message.msg13"
+    @users = @user.followers.paginate(page: params[:page])
+    render "show_follow"
+  end
+
   private
 
   def user_params
@@ -64,8 +78,8 @@ class UsersController < ApplicationController
   end
 
   def correct_user
-    @user = User.find_by(params[:id])
-    redirect_to(root_url) unless current_user?(@user)
+    @user = User.find_by id: params[:id]
+    redirect_to root_path unless current_user? @user
   end
 
   def admin_user

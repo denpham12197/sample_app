@@ -1,5 +1,14 @@
 class User < ApplicationRecord
   has_many :microposts, dependent: :destroy
+  has_many :active_relationships, class_name:  Relationship.name,
+                                  foreign_key: :follower_id,
+                                  dependent:   :destroy
+  has_many :following, through: :active_relationships, source: :followed
+  has_many :passive_relationships, class_name:  Relationship.name,
+                                   foreign_key: :follower_id,
+                                   dependent:   :destroy
+  has_many :following, through: :active_relationships,  source: :followed
+  has_many :followers, through: :passive_relationships, source: :follower
   attr_accessor :remember_token, :activation_token, :reset_token
   before_create :create_activation_digest
   before_save ->{email.downcase!}
@@ -30,7 +39,7 @@ class User < ApplicationRecord
 
   def remember
     self.remember_token = User.new_token
-    update_attribute(:remember_digest, User.digest(remember_token))
+    update_attribute remember_digest: User.digest(remember_token)
   end
 
   def authenticated? attribute, token
@@ -67,6 +76,18 @@ class User < ApplicationRecord
 
   def feed
     microposts.order_created
+  end
+
+  def follow other_user
+    following << other_user
+  end
+
+  def unfollow other_user
+    following.delete(other_user)
+  end
+
+  def following? other_user
+    following.include?(other_user)
   end
 
   private
