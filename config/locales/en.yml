@@ -60,13 +60,13 @@ en:
       h1tag : "Help Page"
     home:
       h1tag : "Home Page"
-      signupnow: Sign up now!"
+      signupnow: "Sign up now!"
+      h2tag : "This is the home page for the"
+      h2-content : "Ruby on Rails Tutorial"
     contact:
       h1tag : "Contact Page"
       content : "Contact the Ruby on Rails Tutorial about the sample app at the"
       welcome : "Welcome to the Sample App"
-      h2tag : "This is the home page for the"
-      h2-content : "Ruby on Rails Tutorial"
     contact:
       h1tag : "Contact Page"
       content : "Contact the Ruby on Rails Tutorial about the sample app at the"
@@ -81,3 +81,4 @@ en:
       login : "Log in"
       sign_up_now: "Sign up now!"
       new : "New user ?"
+      remember : "Remember me on this computer"
