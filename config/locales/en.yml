@@ -4,11 +4,11 @@
 #
 # To use the locales, use `I18n.t`:
 #
-#     I18n.t 'hello'
+#     I18n.t "hello"
 #
 # In views, this is aliased to just `t`:
 #
-#     <%= t('hello') %>
+#     <%= t("hello") %>
 #
 # To use a different locale, set it with `I18n.locale`:
 #
@@ -24,16 +24,34 @@
 # Instead, surround them with single quotes.
 #
 # en:
-#   'true': 'foo'
+#   "true": "foo"
 #
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 en:
-  user_not_found: "User not found"
-  invalid : "Invalid email/password combination"
   welcom : "Welcome to the Sample App!"
   base_title : "Ruby on Rails Tutorials Sample App"
-  layout:
+  form:
+    email: "Email"
+    password: "Password"
+    remember : "Remember"
+  mailer:
+    content: "Welcome to the Sample App! Click on the link below to activate your account:"
+    msg1: "Account activation"
+    msg2: "Hi"
+  message:
+    msg1: "Account activated!"
+    msg2 : "Invalid activation link"
+    msg3: "Account not activated. Check your email for the activation link."
+  errors:
+    nil_user: "User not found"
+    user_deleted: "User deleted"
+    pls_login: "Please log in."
+    profile_update: "Profile updated"
+    user_not_found: "User not found"
+    invalid : "Invalid email/password combination"
+    check_email: "Please check your email to activate your account."
+  layouts:
     _footer:
       content : "Ruby on Rails Tutorial"
       name : "Michael Hartl"
@@ -76,9 +94,26 @@ en:
       content : "This will be a signup page for new users."
       create : "Create my account"
     show:
+    edit:
+      edit: "Edit user"
+      save: "Save changes"
+      update: "Update your profile"
+    index:
+      title: "All users"
+    _user:
+      sure: "You sure?"
+      delete: "delete"
   sessions:
     new:
       login : "Log in"
       sign_up_now: "Sign up now!"
       new : "New user ?"
       remember : "Remember me on this computer"
+  user_mailer:
+    account_activation:
+      active: "Activate"
+      welcome: "Welcome to the Sample App! Click on the link below to activate your account:"
+      hi : "Hi"
+      h1tag : "Sample App"
+    password_reset:
+      h1tag: "User#password_reset"

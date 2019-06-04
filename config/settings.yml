@@ -3,4 +3,11 @@ user:
   email_lenght : 255
   password_lenght : 6
   size : 80
-per_page: 1
+checked : "1"
+default_from_email: "denpham12197@gmail.com"
+address: "smtp.gmail.com"
+port: 587
+domain: "gmail.com"
+authentication: "plain"
+enable_auto: true
+per_page: 30
