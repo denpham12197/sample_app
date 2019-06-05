@@ -31,7 +31,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    if @user.update_attributes(user_params)
+    if @user.update_attributes user_params
       flash[:success] = t "errors.profile_update"
       redirect_to @user
     else
@@ -60,7 +60,7 @@ class UsersController < ApplicationController
     return if logged_in?
     store_location
     flash[:danger] = t "errors.pls_login"
-    redirect_to login_url
+    redirect_to login_path
   end
 
   def correct_user

@@ -3,7 +3,6 @@ user:
   email_lenght : 255
   password_lenght : 6
   size : 80
-
 checked : "1"
 default_from_email: "denpham12197@gmail.com"
 address: "smtp.gmail.com"
@@ -14,3 +13,5 @@ enable_auto: true
 per_page: 30
 size_user: 50
 gio:  2
+micropost_max: 140
+picture_size: 5

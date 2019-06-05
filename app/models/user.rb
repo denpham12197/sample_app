@@ -1,10 +1,12 @@
 class User < ApplicationRecord
+  has_many :microposts, dependent: :destroy
   attr_accessor :remember_token, :activation_token, :reset_token
   before_create :create_activation_digest
   before_save ->{email.downcase!}
   has_secure_password
-  validates :name,  presence: true, length: {maximum: Settings.user.name_lenght}
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
+
+  validates :name,  presence: true, length: {maximum: Settings.user.name_lenght}
   validates :email, presence: true,
                     length: {maximum: Settings.user.email_lenght},
                     format: {with: VALID_EMAIL_REGEX},
@@ -42,7 +44,7 @@ class User < ApplicationRecord
   end
 
   def activate
-    update_columns(activated: true, activated_at: Time.zone.now)
+    update_columns activated: true, activated_at: Time.zone.now
   end
 
   def send_activation_email
@@ -61,6 +63,10 @@ class User < ApplicationRecord
 
   def password_reset_expired?
     reset_sent_at < Settings.gio.hours.ago
+  end
+
+  def feed
+    microposts.order_created
   end
 
   private
